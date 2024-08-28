@@ -102,7 +102,7 @@ ap.add_argument("-gif", "--save_gif", type=bool, default=False,
 ## ==========================================================================================
 ## start main program
 
-if __name__ == '__main__':
+def main():
 
     ## Default use commandline args 
     ## --> Comment this out to manually input args in script
@@ -110,22 +110,22 @@ if __name__ == '__main__':
 
     # Optional: Pass arguments directly in script
     # --> Comment this out to receive args from commandline
-    args = vars(ap.parse_args(
-        ["--video_path",       "videos/guitar.avi", # "videos/eye.avi", # "videos/crane_crop.avi", 
-         "--phase_mag",        "25.0", # "25.0", 
-         "--freq_lo",          "72", # "30", # "0.20", 
-         "--freq_hi",          "92", # "50", # "0.25", 
-         "--colorspace",       "luma3",
-         "--pyramid_type",     "half_octave",
-         "--sigma",            "2.0", # "5.0"
-         "--attenuate",        "True", # "False",
-         "--sample_frequency", "600", # "500", # "-1.0", # This is generally not needed
-         "--reference_index",  "0",
-         "--scale_factor",     "0.75", # "1.0"
-         "--batch_size",       "4",
-         "--save_directory",   "",
-         "--save_gif",         "True"
-         ]))
+    # args = vars(ap.parse_args(
+    #     ["--video_path",       "videos/guitar.avi", # "videos/eye.avi", # "videos/crane_crop.avi", 
+    #      "--phase_mag",        "25.0", # "25.0", 
+    #      "--freq_lo",          "72", # "30", # "0.20", 
+    #      "--freq_hi",          "92", # "50", # "0.25", 
+    #      "--colorspace",       "luma3",
+    #      "--pyramid_type",     "half_octave",
+    #      "--sigma",            "2.0", # "5.0"
+    #      "--attenuate",        "True", # "False",
+    #      "--sample_frequency", "600", # "500", # "-1.0", # This is generally not needed
+    #      "--reference_index",  "0",
+    #      "--scale_factor",     "0.75", # "1.0"
+    #      "--batch_size",       "4",
+    #      "--save_directory",   "",
+    #      "--save_gif",         "True"
+    #      ]))
 
     # args = vars(ap.parse_args(
     #     ["--video_path",       "videos/crane_crop.avi", 
@@ -415,3 +415,6 @@ if __name__ == '__main__':
     print("Motion Magnification processing complete! \n")
     print(f"Time Elapsed (HH:MM:SS): {time_elapsed} \n")
     
+
+if __name__ == "__main__":
+    main()
